@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <time.h>
+main()
+{   system("color F0");
+	int contador,token,array[33];
+    contador=0;
+	srand (time(NULL)); //limpieza de randomizador de números
+	for(token=0; token<33; token++)
+	{	array[token]=rand()%150;        //asignación de numeros enteros aleatorios entre 0 y 149
+		if(array[token]>10)
+			{ contador=contador+array[token];   }
+ }
+	    for(token=0;token<11;token++)               //impresión de vector en formato matricial, para optimizar pantalla//
+			printf("%d\t",array[token]);
+     	printf("\n");
+   	for(token=11;token<22;token++)
+			printf("%d\t",array[token]);
+		  	printf("\n");
+   	for(token=22;token<33;token++)
+			printf("%d\t",array[token]);            //impresión de vector en formato matricial, para optimizar pantalla//
+   	printf("\n");
+ 	fflush(stdin);  //limpieza de buffer de datos, esto me generaba error antes.
+	token=0;
+	printf("los numeros mayores a 10 son:\n");
+	for(token=0;token<11;token++)
+	    	if(array[token]>10)
+			{	printf("%d\t",array[token]);    }   //en este patron de impresión se repite la idea anterior//
+	printf("\n");                             //con la salvedad que solo imprime valores que sean mayores a 10//
+	for(token=11;token<22;token++)
+	    	if(array[token]>10)
+			{	printf("%d\t",array[token]);    }
+	printf("\n");
+	for(token=22;token<33;token++)
+	    	if(array[token]>10)
+			{	printf("%d\t",array[token]);    }
+		printf("\n");
+      	printf("la sumatoria de los mayores a 10 es %d\n",contador);
+getch();
+}
